@@ -13,3 +13,5 @@ npm install
 ```
 npm test
 ```
+
+Note: for the test environment, the site will be accessible at localhost:3000/src/views/path-to/your-endpoint.html

@@ -2,7 +2,7 @@
   "name": "polyrents",
   "version": "1.0.0",
   "description": "Stressed about living off campus? Relax. We've got your back. PolyRents is working to simplify your off campus housing search. We make it extremely easy to fill out one application, organize your roommates, and apply anywhere.",
-  "main": "index.html",
+  "main": "dist/index.html",
   "scripts": {
     "test": "gulp"
   },

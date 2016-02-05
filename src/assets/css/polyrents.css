@@ -1,0 +1,33 @@
+body {
+  background: #e7e7e7;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex; 
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+body>div {
+  background: #fff;
+  max-width: 400px;
+  margin: auto;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  border-radius: 0.5em 0.5em 0.5em 0.5em;
+}
+
+form {
+  padding: 1em;
+}
