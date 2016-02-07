@@ -1,10 +1,9 @@
 const React = require("react");
-var Navbar0 = require("../common/Navbar0.jsx");
 
 var SignUpPage = React.createClass({
   "render": function() {
     return (
-      <form className="col-xs-10 col-xs-offset-1">
+      <form className="col-xs-8 col-xs-offset-2">
         <h2 className="eq text-center">Welcome to PolyRents!</h2>
         <br/>
         <fieldset className="form-group">
@@ -38,7 +37,7 @@ var SignUpPage = React.createClass({
         <br/>
         <button className="btn btn-primary center-block">Make my life easier!</button>
         <br/>
-        <p className="text-center"><a href="#">If you already have an account, please sign in here.</a></p>
+        <p className="text-center"><a href="#">Already have an account? Sign in here.</a></p>
       </form>
     );
   }

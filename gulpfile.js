@@ -18,6 +18,18 @@ gulp.task("pack-signup", function() {
   .pipe(gulp.dest("./src/build/"));
 });
 
+gulp.task("pack-signin", function() {
+  return browserify({
+    "debug": devEnvironment,
+    "entries": "./src/assets/js/polyrents-signin.js",
+    "transform": [ reactify ]
+  })
+  .bundle()
+  .pipe(source("polyrents-signin.min.js"))
+  .pipe(buffer())
+  .pipe(gulp.dest("./src/build/"));
+});
+
 gulp.task("pack-tenant-register", function() {
   return browserify({
     "debug": true,
@@ -56,10 +68,11 @@ gulp.task("pack-guarantor-register", function() {
 
 gulp.task("watch", function(callback) {
   gulp.watch("./src/components/signup/**/*.*", [ "pack-signup" ]);
+  gulp.watch("./src/components/signin/**/*.*", [ "pack-signin" ]);
   gulp.watch("./src/components/tenant-register/**/*.*", [ "pack-tenant-register" ]);
   gulp.watch("./src/components/landlord-register/**/*.*", [ "pack-landlord-register" ]);
   gulp.watch("./src/components/guarantor-register/**/*.*", [ "pack-guarantor-register" ]);
-  gulp.watch("./src/components/common/**/*.*", [ "pack-signup", "pack-tenant-register", "pack-landlord-register", "pack-guarantor-register" ]);
+  gulp.watch("./src/components/common/**/*.*", [ "pack-signup", "pack-signin", "pack-tenant-register", "pack-landlord-register", "pack-guarantor-register" ]);
 });
 
 gulp.task("browser-sync", function(callback) {
@@ -78,6 +91,7 @@ gulp.task("browser-sync", function(callback) {
 gulp.task("default", function() {
   gulp.start([
     "pack-signup",
+    "pack-signin",
     "pack-tenant-register",
     "pack-landlord-register",
     "pack-guarantor-register",
