@@ -7,7 +7,6 @@ var TenantRegisterPage = React.createClass({
       <div>
         <Navbar tenant="true"/>
         <form>
-          <h1>Sign up here!</h1>
           <fieldset className="form-group">
             <label htmlFor="phone">Phone Number</label>
             <input type="text" className="form-control" id="phone" placeholder="5555555555"/>
@@ -28,7 +27,7 @@ var TenantRegisterPage = React.createClass({
             <label htmlFor="grad">Graduation Date</label>
             <input type="text" className="form-control" id="grad" placeholder="YYYY-MM-DD"/>
           </fieldset>
-          <button className="btn btn-primary">Submit</button>
+          <button className="btn btn-primary center-block">Submit</button>
         </form>
       </div>
     );

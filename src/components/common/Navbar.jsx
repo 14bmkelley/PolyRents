@@ -16,6 +16,7 @@ var Navbar = React.createClass({
     }
     return (
       <nav>
+        <h2 className="eq text-center">Welcome to PolyRents!</h2>
         <ul className="nav nav-tabs nav-justified">
           <li role="presentation" className={ tenant }>
             <a href="./tenant-register.html">

@@ -1,6 +1,8 @@
 body {
   background: #e7e7e7;
   width: 100%;
+  height: 100vh;
+  padding: 1em;
   display: -webkit-box;
   display: -webkit-flex; 
   display: -moz-box;
@@ -20,8 +22,9 @@ body {
 
 body>div {
   background: #fff;
-  max-width: 400px;
-  margin: auto;
+  display: inline-block;
+  width: 100%;
+  max-width: 600px;
   border-left: 1px solid #ddd;
   border-right: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
@@ -30,4 +33,19 @@ body>div {
 
 form {
   padding: 1em;
+}
+
+h1.eq {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+h2.eq {
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+}
+
+h3.eq {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }

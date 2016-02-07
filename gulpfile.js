@@ -64,7 +64,7 @@ gulp.task("watch", function(callback) {
 
 gulp.task("browser-sync", function(callback) {
   browserSync.init({
-    "files": [ "./src/build/**/*.*" ],
+    "files": [ "./src/**/*.*" ],
     "port": 3000,
     "logLevel": "info",
     "injectChanges": true,
