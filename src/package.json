@@ -1,0 +1,25 @@
+{
+  "name": "polyrents",
+  "version": "1.0.0",
+  "description": "Stressed about living off campus? Relax. We've got your back. PolyRents is working to simplify your off campus housing search. We make it extremely easy to fill out one application, organize your roommates, and apply anywhere.",
+  "main": "/signup",
+  "scripts": {
+    "test": "Do nothing"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/14bmkelley/polyrents.git"
+  },
+  "author": "Brandon M. Kelley",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/14bmkelley/polyrents/issues"
+  },
+  "homepage": "http://www.polyrents.com",
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.2.0",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7"
+  }
+}

@@ -2,7 +2,6 @@ const React = require("react");
 
 var Header = React.createClass({
   "render": function() {
-    var progress = "7%";
     return (
       <header className="row">
         <div className="col-sm-2 col-xs-12">
@@ -25,7 +24,7 @@ var Header = React.createClass({
         </div>
         <div className="col-sm-10 hidden-xs">
           <div className="progress">
-            <div className="progress-bar" role="progressbar" style={{ width: progress }}></div>
+            <div className="progress-bar" role="progressbar" style={{ width: this.props.progress }}></div>
           </div>
         </div>
       </header>
