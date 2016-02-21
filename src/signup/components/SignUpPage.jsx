@@ -8,29 +8,45 @@ var SignUpPage = React.createClass({
   
   "handleSubmit": function(clickEvent) {
     clickEvent.preventDefault();
-    if ($("#form-type").val() === "Tenant") {
-      var params = {
-        "first_name": $("#firstName").val(),
-        "last_name": $("#lastName").val(),
-        "email": $("#email").val(),
-        "password": $("#password").val()
-      };
-      console.log(params);
-      $.ajax({
-        "url": "http://polyrents-dev.mkpkktgrns.us-west-2.elasticbeanstalk.com/api/tenant/register/",
-        "type": "POST",
-        "contentType": "application/json",
-        "data": JSON.stringify(params),
-        "success": function(data) {
-          sessionStorage.token = data.token;
-          sessionStorage.name = params.first_name;
-          window.location.pathname = "/tenant/onboarding";
-        },
-        "error": function(data) {
-          console.log(data);
-        }
-      });
-    }
+    $(".alert-danger").slideUp(function() {
+      if (!$("input[type='checkbox']").prop("checked")) {
+        $(".alert-danger").text("Please read and agree to the PolyRents Terms of Service.");
+        $(".alert-danger").slideDown();
+        return;
+      }
+      if ($("#form-type").val() === "Tenant") {
+        var params = {
+          "first_name": $("#firstName").val(),
+          "last_name": $("#lastName").val(),
+          "email": $("#email").val(),
+          "password": $("#password").val()
+        };
+        $.ajax({
+          "url": "http://polyrents-dev.mkpkktgrns.us-west-2.elasticbeanstalk.com/api/tenant/register/",
+          "type": "POST",
+          "contentType": "application/json",
+          "data": JSON.stringify(params),
+          "success": function(data) {
+            sessionStorage.token = data.token;
+            sessionStorage.name = params.first_name;
+            window.location.pathname = "/tenant/onboarding";
+          },
+          "error": function(data) {
+            var error = JSON.parse(data.responseText);
+            var field = Object.keys(error)[0];
+            var fieldDict = {
+              "email": "email",
+              "password": "password",
+              "first_name": "first name",
+              "last_name": "last name"
+            };
+            $(".alert-danger").text("The " + fieldDict[field] 
+              + " field has an error: " + error[field]);
+            $(".alert-danger").slideDown();
+          }
+        });
+      }
+    });
   },
   
   "render": function() {
@@ -66,7 +82,7 @@ var SignUpPage = React.createClass({
             I've read and agree to the PolyRents Terms of Service
           </label>
         </div>
-        <br/>
+        <div className="alert alert-danger" role="alert" style={{ "display": "none" }}></div>
         <button className="btn btn-primary center-block">Make my life easier!</button>
         <br/>
         <p className="text-center"><a href="#">Already have an account? Sign in here.</a></p>
