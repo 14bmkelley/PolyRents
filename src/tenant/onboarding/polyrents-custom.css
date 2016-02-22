@@ -1,0 +1,9 @@
+@media (max-width: 767px) {
+  header .img-responsive {
+    max-width: 200px;
+    margin: auto;
+  }
+  header #logo {
+    padding: 1em;
+  }
+}

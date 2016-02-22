@@ -27,7 +27,7 @@ var SignUpPage = React.createClass({
           "contentType": "application/json",
           "data": JSON.stringify(params),
           "success": function(data) {
-            sessionStorage.token = data.token;
+            sessionStorage.token = "Token " + data.token;
             sessionStorage.name = params.first_name;
             window.location.pathname = "/tenant/onboarding";
           },

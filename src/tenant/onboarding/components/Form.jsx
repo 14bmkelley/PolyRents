@@ -1,20 +1,33 @@
 const React = require("react");
 var PersonalInfo = require("./PersonalInfo.jsx");
+var RentalHistory = require("./RentalHistory.jsx");
 
 var Form = React.createClass({
   
-  "componentDidMount": function() {
-    console.log(sessionStorage.token);
-  },
-  
-  "getInitialState": function() {
-    return { "form": 1 };
-  },
-  
   "render": function() {
-    switch (this.state.form) {
+    switch (this.props.step) {
+      case 0:
+        return <div></div>;
+        break;
       case 1:
-        return <PersonalInfo />;
+        return <PersonalInfo
+                incrementState={ this.props.incrementState }/>;
+        break;
+      case 2:
+        return <RentalHistory
+                incrementState={ this.props.incrementState }/>;
+        break;
+      case 3:
+        return <Guarantor
+                incrementState={ this.props.incrementState }/>;
+        break;
+      case 4:
+        return <Vehicle
+                incrementState={ this.props.incrementState }/>;
+        break;
+      case 5:
+        return <Bio
+                incrementState={ this.props.incrementState }/>;
     }
   }
 

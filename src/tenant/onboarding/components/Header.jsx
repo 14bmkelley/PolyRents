@@ -4,7 +4,7 @@ var Header = React.createClass({
   "render": function() {
     return (
       <header className="row">
-        <div className="col-sm-2 col-xs-12">
+        <div id="logo" className="col-sm-2 col-xs-12">
           <img className="img-responsive" src="/assets/images/logo600x600blue.png" />
         </div>
         <div className="col-sm-2 hidden-xs">
